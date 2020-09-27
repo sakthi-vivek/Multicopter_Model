@@ -1,4 +1,4 @@
-plant_version = 'v0.1.0';
+plant_version = 'v0.1.2';
 
 %% Constant Variable (for internal use)
 PLANT_CONST.dt = 0.002;
