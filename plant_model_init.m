@@ -1,4 +1,9 @@
-plant_version = 'v0.1.3';
+model_version = 'v0.1.3';
+model_name = 'Multicopter';
+
+%% load configuration
+load('plant_default_config.mat');
+wmm = load('wmmgrid_2019.mat');
 
 %% Constant Variable (for internal use)
 PLANT_CONST.dt = 0.002;
@@ -20,7 +25,7 @@ plant_model.motorJm = 0.0001287;    %Moment of inertia of motor rotor + propelle
 
 %% Exported Value
 PLANT_EXPORT_VALUE.period = uint32(PLANT_CONST.dt*1e3); 
-PLANT_EXPORT_VALUE.model_info = int8(['Multicopter ',plant_version, 0]); % 0 for end of string
+PLANT_EXPORT_VALUE.model_info = int8([model_name, ' ', model_version, 0]); % 0 for end of string
 
 PLANT_EXPORT = Simulink.Parameter(PLANT_EXPORT_VALUE);
 PLANT_EXPORT.CoderInfo.StorageClass = 'ExportedGlobal';
